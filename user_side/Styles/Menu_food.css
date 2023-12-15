@@ -1,0 +1,275 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.SAS-nav-title {
+    display: block;
+    color: #fff;
+}
+
+.SAS-nav-title span {
+    color: #fff;
+}
+
+.navbar-nav ms-auto mb-2 mb-lg-0{
+    color: black;
+}
+
+.nav-link{
+    color: black;
+}
+
+.navbar-brand {
+    color: #fbbc05;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    
+}
+.carousel-img-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0
+}
+.carousel-caption {
+    bottom: 220px;
+   
+}
+
+.carousel-caption h5 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+    color: #fff;
+    font-weight: bolder;
+     font-weight: 702;
+     font-family: "Nunito", sans-serif; 
+    /* background-color: #fff; */
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+    /* color: #fff;
+    background-color: black; */
+}
+
+.carousel-caption span {
+    width: 45%;
+    margin: auto;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #fff;
+    font-weight: bolder;
+    font-family:  "Segoe UI", Arial, sans-serif; 
+    /* background-color: black; */
+}
+
+.carousel-caption a {
+    text-transform: uppercase;
+    text-decoration: none;
+    background:#fbbc05;
+    padding: 15px 35px;
+     border-radius: 10px;
+    display: inline-block;
+    color: white;
+     font-family:  " Arial", sans-serif; 
+    font-weight: 250;
+    margin-top: 15px;
+     position: relative;
+    z-index: 1;
+}
+.carousel-caption a::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transition: transform 300ms ease-in;
+}
+.carousel-caption a::after{
+    transform: scale(0);
+    transform-origin: center;
+}
+.carousel-caption a:hover:after{
+    transform: scale(1);
+     border-radius: 10px;
+}
+
+.navbar-nav a {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-brand {
+    color: #fff;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+.w-100 {
+    height: 100vh;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: #fff;
+}
+
+/* added the body background for having the same color as footer */
+body{
+    background:black;
+}
+
+/* @media only screen and (max-width: 767px) {
+
+    .navbar-nav {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .carousel-caption {
+        bottom: 165px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 17px;
+    }
+
+    .carousel-caption a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+} */
+
+
+
+
+
+
+/* @media only screen and (max-width: 770px) {
+
+    .nav-content{
+        display: flex;
+        flex-direction: column;
+    }
+    
+} */
+
+
+
+.menu-card-container{
+    margin: 30px 40px 0px 40px;
+}
+.title{
+    font-weight: 700;
+    font-size: 50px;
+    display: inline;
+}
+.dropdown{
+    float: right;
+    font-size: 50px;
+    display: inline;
+}
+.menu-card {
+    margin-top: 40px;
+    height: fit-content;
+    width:  fit-content;
+}
+.card{
+    height: fit-content;
+    width: 400px;
+    border: 4px solid #fbbc05;
+    border-radius: 35px;
+    overflow: hidden;
+    background-color: black;
+}
+.card:hover{
+    border: 2px solid #fbbc05;
+}
+.discription{
+    color: white;
+    font-size: 17px;
+    font-weight: 450;
+    text-align: left;
+    border-bottom: 3px solid #fbbc05;
+    height: 150px;
+    padding: 10px;
+}
+.item-name{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 800;
+    color: white;
+}
+.food-img{
+    width: 100%;
+    height: 250px;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.addtocart-button{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px;
+    width: 200px;
+    height: 40px;
+    border-right: 3px solid #fbbc05;
+}
+.addtocart-button:hover{
+    color: black;
+    background-color: white;
+}
+.price{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 60px;
+}
+.card-container{
+    float: left;
+    padding: 39px;
+    height: fit-content;
+    width: fit-content;
+
+}
+

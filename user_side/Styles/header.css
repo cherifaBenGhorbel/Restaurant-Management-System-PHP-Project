@@ -1,0 +1,233 @@
+/* header.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@200;300;400;700;900&display=swap');
+
+:root {
+    --clr-main-bg: black;
+    --clr-main-theme: #fbbc05;
+    --clr-text: rgb(170, 169, 169);
+    --clr-hover: #e09900;
+    --clr-main-light: #fff;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: black;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--clr-main-light);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-main-light);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-main-bg);
+    padding: 1rem 4rem;
+    font-size: 1.025rem;
+    font-weight: 500;
+}
+
+.nav-title {
+    text-align: center;
+}
+
+.nav-title span{
+    font-size: 1.75rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-family: 'Berkshire Swash', cursive;
+}
+
+.nav-title :is(span, p) {
+    position: relative;
+}
+
+.nav-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+.nav-content .btn.sign-out {
+    background-color: transparent;
+    border: 2px solid #fbbc05;
+    color: #fbbc05;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.nav-content .btn.sign-out:hover {
+    background-color: #fbbc05;
+    color: white;
+}
+
+.navbar .nav-content ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    font-weight: 500;
+}
+
+.nav-content ul a {
+    color: var(--clr-main-light);
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-content ul a:hover {
+    color: var(--clr-text);
+}
+
+.nav-content ul a::after {
+    content: '';
+    height: 4px;
+    width: 100%;
+    display: block;
+    background-color: var(--clr-text);
+    position: absolute;
+    top: 115%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-content ul a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+button {
+    border: transparent;
+    background: transparent;
+}
+
+.btn a{
+    letter-spacing: 1px;
+    font-size: 1.025rem;
+    padding: 10px 30px;
+    background-color: var(--clr-main-theme);
+    height: 100%;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+.btn a::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.144);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease-in ;
+}
+
+.btn a:hover::after,
+.btn a:focus::after {
+    transform: scaleX(1);
+}
+
+#ss a {
+    background-color: transparent;
+    color: var(--clr-main-theme);
+}
+
+.header .navbar .mobile{
+    display: none;
+}
+
+#close{
+    display: none;
+}
+
+@media (max-width: 850px) {
+    .navbar{
+        padding: .5rem 2rem;
+    }
+    .nav-content{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar .nav-content ul{
+        display: flex;
+        flex-direction: column;
+    }
+    header .navbar .nav-content{
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: -410px;
+        padding: 30px 0;
+        font-size: 1.15rem;
+        align-items: center;
+        justify-content: flex-start;
+        background-color: var(--clr-main-bg);
+        height: 400px;
+        transition: .6s;
+    }
+    #close{
+        font-size: 25px;
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: black;
+        border: 2px solid #fcfbfb;
+        background-color: white;
+        padding: 10px 15px;
+        border-radius: 40px;
+    }
+    header .navbar .mobile{
+        display: block;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .navbar{
+        padding: .5rem 1.5rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .navbar .mobile i {
+        font-size: 1.7rem;
+    }
+    header .navbar .nav-content{
+        font-size: 1rem;
+    }
+}

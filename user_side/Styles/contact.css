@@ -1,0 +1,167 @@
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap');
+
+:root {
+    --clr-main-bg: black;
+    --clr-accent: #fbbc05;
+    --clr-light: rgb(215, 215, 215);
+    --clr-bright: #bdbdbd;
+    --clr-medium: #ababab;
+    --animation: 0.3s ease-in-out;
+}
+
+body {
+    background: var(--clr-main-bg);
+    width: 100vw;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    color: var(--clr-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 1.5rem;
+    word-spacing: 2px;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+p {
+    font-size: 0.85rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main section {
+    width: 80%;
+    max-width: 600px;
+    background-color: var(--clr-main-bg);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: auto;
+    position: absolute;
+}
+
+.form-container {
+    background-color: var(--clr-light);
+    color: black;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+}
+
+.main-form h2 {
+    font-size: 0.875;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+}
+
+.main-form input,
+.main-form textarea {
+    border: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.main-form input {
+    padding: 0.85rem 1rem;
+}
+
+.main-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.main-form textarea {
+    resize: none;
+    background-color: rgb(223, 223, 223);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+}
+
+.main-form textarea::placeholder {
+    color: var(--clr-medium);
+}
+
+.input {
+    margin-bottom: 1.5rem;
+}
+
+.input i {
+    margin-right: 16px;
+}
+
+.name .input,
+.email .input,
+.password .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    border: 2px solid var(--clr-medium);
+    border-radius: 8px;
+}
+
+.name .input:focus-within,
+.email .input:focus-within,
+.password .input:focus-within {
+    border-color: var(--clr-accent);
+}
+
+.name .input:focus-within i,
+.email .input:focus-within i,
+.password .input:focus-within i {
+    color: var(--clr-accent);
+}
+
+.button {
+    width: 100%;
+    text-align: right;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.btn a {
+    width: max-content;
+    padding: 15px 30px;
+    background-color: var(--clr-accent);
+    color: white;
+    border-radius: 8px;
+    transition: var(--animation);
+    font-size: 1.25rem;
+}
+
+.btn a:hover,
+.btn a:focus {
+    background-color: #e09900;
+}
+
+#acc {
+    text-align: left;
+    color: #e09900;
+}
