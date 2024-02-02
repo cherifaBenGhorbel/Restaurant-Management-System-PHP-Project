@@ -8,7 +8,10 @@ if (!isset($_SESSION['loggedin']) || !isset($_SESSION['userType']) || !isset($_S
     header('Location: ../SignIn/SignIn.php');
     exit();
 }
-
+if($_SESSION['2fa_verified'] == false){
+    header('Location: ../doubleAuthentication/enter_2fa_code.php');
+    exit();
+}
 
 
 $restaurantId = $_GET['restaurantId'];
@@ -76,41 +79,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     color: #e09900;
 }
 
-.nav-content .btn.sign-out {
-    background-color: transparent;
-    border: 2px solid #fbbc05;
-    color: #fbbc05;
-    padding: 8px 16px;
-    border-radius: 8px;
-}
 
-.nav-content .btn.sign-out:hover {
-    background-color: #fbbc05;
-    color: white;
-        }
     </style>
 </head>
 <body>
 <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 999;">
         <nav class="navbar">
-            <div class="nav-title">
-                <span>YourFavourite</span>
-            </div>
-            <div class="nav-content">
-                <ul>
-                    <li><a href="../clientDashboard/home.php">Home</a></li>
-                    <li><a href="../searchRestaurant/search.php">Search</a></li>
-                    <li><a href="../listeReservation/clientReservations.php">My Reservations</a></li>
-                    <li class="btn sign-out"><?php echo $_SESSION['lastName'].' '.$_SESSION['firstName']?></li>
-                    <li><a class="btn sign-out" href="../LogOut/end.php">Sign Out</a></li>
-                </ul>
-                <i id="close" class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="mobile">
-                <i class="bar fa-solid fa-utensils"></i>
-            </div>
+            <?php include('../clientNav/navC.php'); ?>
         </nav>
-    </header>
+</header>
     <main>
         <section>
             

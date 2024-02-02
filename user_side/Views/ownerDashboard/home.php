@@ -76,19 +76,6 @@ h2 {
     margin-top: 25px;
 }
 
-.nav-content .btn.sign-out {
-background-color: transparent;
-border: 2px solid #fbbc05;
-color: #fbbc05;
-padding: 8px 16px;
-border-radius: 8px;
-}
-
-.nav-content .btn.sign-out:hover {
-background-color: #fbbc05;
-color: white;
-}
-
 </style>
     <?php
         
@@ -108,22 +95,8 @@ color: white;
     <title>YourFavourite</title>
 </head>
     <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 999;">
-        <nav class="navbar">
-            <div class="nav-title">
-                <span>YourFavourite</span>
-            </div>
-            <div class="nav-content">
-    <ul>
-    <li><a href="../ownerDashboard/home.php">HOME</a></li>
-        <li><a href="../AddRestaurant/addR.php">Add Restaurant</a></li>
-        <li class="btn sign-out"><?php echo $_SESSION['lastName'].' '.$_SESSION['firstName']?></li>
-        <li><a class="btn sign-out" href="../LogOut/end.php">Sign Out</a></li>
-    </ul>
-    <i id="close" class="fa-solid fa-xmark"></i>
-</div>
-            <div class="mobile">
-                <i class="bar fa-solid fa-utensils"></i>
-            </div>
+    <nav class="navbar">
+            <?php include('../ownerResNav/navO.php'); ?>
         </nav>
     </header>
     <main>

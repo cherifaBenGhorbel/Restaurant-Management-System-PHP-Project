@@ -26,6 +26,38 @@ class RestaurantOwnerController extends Connexion {
         return $res->fetch();
     }
 
+    function getRestaurantOwnerById($id) {
+        $query = "SELECT * FROM restaurantowner WHERE ownerRes = ?";
+        $res = $this->pdo->prepare($query);
+        $res->execute(array($id));
+        return $res->fetch(PDO::FETCH_ASSOC);
+    }
+    function addSecret($id,$secret){
+        $query = 'UPDATE restaurantowner SET secret = :secret WHERE ownerRes = :id';
+        $q = $this->pdo->prepare($query);
+        $q->bindValue('secret', $secret);
+        $q->bindValue('id', $id);
+        $q->execute();
+    }
+
+    function getSecret($id){
+        $query = "SELECT secret FROM restaurantowner WHERE ownerRes = ?";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT); 
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result ? $result['secret'] : null; // Return the secret or null if not found
+    }
+    public function is2FAEnabled($id) {
+        $secret = $this->getSecret($id);
+        return !empty($secret);
+    }
+    function removeSecret($id){
+        $query = 'UPDATE restaurantowner SET secret = NULL WHERE ownerRes = :id';
+        $req = $this->pdo->prepare($query);
+        $req->bindValue("id",$id,PDO::PARAM_INT);
+        $req->execute();
+    }
     function delete($ownerRes) {
         $query = "DELETE FROM restaurantowner WHERE ownerRes=?";
         $res = $this->pdo->prepare($query);

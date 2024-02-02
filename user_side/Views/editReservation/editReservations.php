@@ -64,7 +64,6 @@ main {
 .form-container {
     width: 100%;
     max-width: 600px;
-    background-color: #222;
     border-radius: 12px;
     padding: 3rem;
     margin: auto;
@@ -92,7 +91,6 @@ main {
 .input input,
 .button button {
     border: 0;
-    background-color: transparent;
     height: 100%;
     width: 100%;
     color: white;
@@ -113,7 +111,7 @@ main {
 
 .button {
     width: 100%;
-    text-align: right;
+    text-align: center;
 }
 
 .button button {
@@ -123,24 +121,12 @@ main {
     color: white;
     border-radius: 8px;
     transition: 0.3s ease-in-out;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .button button:hover,
 .button button:focus {
     background-color: #e09900;
-}
-.nav-content .btn.sign-out {
-    background-color: transparent;
-    border: 2px solid #fbbc05;
-    color: #fbbc05;
-    padding: 8px 16px;
-    border-radius: 8px;
-}
-
-.nav-content .btn.sign-out:hover {
-    background-color: #fbbc05;
-    color: white;
 }
 
 
@@ -149,27 +135,13 @@ main {
 <body>
 <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 999;">
         <nav class="navbar">
-            <div class="nav-title">
-                <span>YourFavourite</span>
-            </div>
-            <div class="nav-content">
-                <ul>
-                    <li><a href="../clientDashboard/home.php">Home</a></li>
-                    <li><a href="../searchRestaurant/search.php">Search</a></li>
-                    <li><a href="../listeReservation/clientReservations.php">My Reservations</a></li>
-                    <li class="btn sign-out"><?php echo $_SESSION['lastName'].' '.$_SESSION['firstName']?></li>
-                    <li><a class="btn sign-out" href="../LogOut/end.php">Sign Out</a></li>
-                </ul>
-                <i id="close" class="fa-solid fa-xmark"></i>
-            </div>
-            <div class="mobile">
-                <i class="bar fa-solid fa-utensils"></i>
-            </div>
+            <?php include('../clientNav/navC.php'); ?>
         </nav>
-    </header>
+</header>
     <main>
         <section>
             <h2>Edit Reservation</h2>
+            <br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . '?reservationId=' . $reservationId; ?>" method="post" class="main-form">
             <div class="input">
                 <label for="date">Date:</label>
